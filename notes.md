@@ -129,3 +129,23 @@ You can Clear Error Logs (Optional)
 ```sh
 sudo bash -c 'echo > /var/log/apache2/error.log'
 ```
+
+===================================================================================================================
+### How to Enable HTTPS for VPS using Let's Encrypt
+
+- STEP 1 : Install Certbot and python3-certbot-apache
+```sh
+apt install certbot python3-certbot-apache
+```
+- STEP 2 : Obtain an SSL certificate
+```sh
+certbot --apache
+```
+- STEP 3 : Check Status of Certbot
+```sh
+systemctl status certbot.timer
+```
+- STEP 4 : Dry Run SSL Renewal
+```sh
+certbot renew --dry-run
+```
